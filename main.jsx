@@ -1,0 +1,23 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { BlogProvider } from "./context/BlogContext";
+import { AuthProvider } from "./context/AuthContext";
+import { ToastProvider } from "./context/ToastContext";
+import "./App.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <ToastProvider>
+        <AuthProvider>
+          <BlogProvider>
+            <App />
+          </BlogProvider>
+        </AuthProvider>
+      </ToastProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
+

@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f5f7fb;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  background: #46e5d8;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #38ca92;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

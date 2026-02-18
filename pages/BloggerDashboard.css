@@ -1,0 +1,331 @@
+
+.blogger-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Layout when using the sidebar */
+.dashboard-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.dashboard-layout .blogger-container {
+  flex: 1;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .dashboard-layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; }
+}
+
+.blogger-container h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  margin-bottom: 1rem;
+}
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #fef9e7; /* soft card background */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Side-by-side layout for large screens */
+@media (min-width: 1024px) {
+  .form-grid {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .form-left,
+  .form-right {
+    flex: 1;
+  }
+}
+
+/* Inputs and textareas inside card */
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* Media preview styling */
+.media-preview {
+  margin-top: 0.5rem;
+}
+
+.media-preview img,
+.media-preview video {
+  width: 100%;
+  border-radius: 0.75rem;
+  max-height: 400px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* For larger screens, show side-by-side */
+@media (min-width: 768px) {
+  .form-grid {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .form-left,
+  .form-right {
+    flex: 1;
+  }
+}
+
+
+/* Blog Type Buttons */
+.blog-type-selector {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.blog-type-selector button {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.blog-type-selector button.active {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.blog-type-selector button:not(.active) {
+  background: #e5e7eb; /* gray-200 */
+  color: #111827;
+}
+
+.blog-type-selector button:hover {
+  transform: scale(1.05);
+}
+
+/* Inputs & Textareas */
+.blogger-container input,
+.blogger-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.blogger-container input:focus,
+.blogger-container textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+}
+
+/* Publish Button */
+.publish-btn {
+  padding: 0.5rem 1.5rem;
+  background: #10b981; /* green-500 */
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.publish-btn:hover {
+  background: #059669; /* green-600 */
+  transform: scale(1.03);
+}
+
+/* Blog Cards Grid */
+.blog-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Blog Card */
+.blog-card {
+  position: relative;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+/* Status Badge */
+.blog-card .status-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #ec4899, #facc15);
+}
+
+/* Tags */
+.blog-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card .tags span {
+  background: rgba(190, 76, 76, 0.2);
+  backdrop-filter: blur(6px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  color: #111827;
+}
+
+/* Media */
+.blog-card img,
+.blog-card video {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-card img:hover,
+.blog-card video:hover {
+  transform: scale(1.03);
+}
+
+/* Like & Comment Buttons */
+.blog-card .actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.blog-card .actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+  transition: color 0.2s ease;
+}
+
+.blog-card .actions button:hover {
+  color: #ef4444; /* red-500 for likes */
+}
+
+/* Edit & Delete Buttons */
+.blog-card .edit-delete {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.blog-card .edit-delete button {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-card .edit-delete .edit-btn {
+  background: #facc15; /* yellow-400 */
+  color: white;
+}
+
+.blog-card .edit-delete .edit-btn:hover {
+  background: #fbbf24; /* yellow-500 */
+  transform: scale(1.03);
+}
+
+.blog-card .edit-delete .delete-btn {
+  background: #ef4444; /* red-500 */
+  color: white;
+}
+
+.blog-card .edit-delete .delete-btn:hover {
+  background: #dc2626; /* red-600 */
+  transform: scale(1.03);
+}
+
+/* Divider */
+.blogger-container hr {
+  margin: 2rem 0;
+  border-color: #d1d5db;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
